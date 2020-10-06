@@ -1,0 +1,208 @@
+.conf {
+    margin-top: 10px;
+    margin-left: 20px;
+    padding-left: 10px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    min-height: 100px;
+}
+
+.VCBM {
+    font-family: sans-serif;
+    border-left: 5px solid #0693e3;
+}
+
+.VCBM i {
+    color: #0693e3;
+}
+
+.VMV {
+    font-family: sans-serif;
+    border-left: 5px solid #F7B728;
+}
+
+.VMV i {
+    color: #F7B728;
+}
+
+.GCPR {
+    font-family: sans-serif;
+    border-left: 5px solid #cf2e2e;
+}
+
+.GCPR i {
+    color: #cf2e2e
+}
+
+.JOINT {
+    font-family: sans-serif;
+    border-left: 5px solid #68E02F;
+}
+
+.JOINT i {
+    color: #68E02F;
+}
+
+.VMVVCBM {
+    font-family: sans-serif;
+    border-left: 5px solid #9f44fa;
+}
+
+.VMVVCBM i {
+    color: #9f44fa;
+}
+
+.tracktimes {
+    font-weight: normal;
+    font-size: inherit;
+}
+
+.time {
+    float: left;
+    width: 10%;
+    text-align: left;
+    height: auto;
+}
+.attributes {
+    float: left;
+    width: 90%;
+    height: auto;
+}
+
+.abstract {
+    margin-left: 10%;
+    margin-top: 5px;
+    padding-top: 5px;
+    clear: both;
+    width: 100%;
+}
+
+.abstract_text {
+    font-size: 0.8em;
+    font-style: italic;
+}
+
+.time i, p {
+    display: block;
+}
+
+.conf h4 {
+    margin-top: 10px;
+    margin-bottom: 5px; /* krrrch, bottom. */
+    margin-left: 10px;
+    display: inline-block;
+	  padding-top: 0;
+    scroll-margin-top: 75px;
+}
+
+.conf span {
+	padding-top: 5px;
+}
+
+.conf .entrytype {
+    display: inline-block;
+}
+
+.entry {
+    padding: 10px;
+    margin-bottom: 0;
+    height: auto;
+    min-height: 60px;
+    clear: both;
+}
+
+.sideways {
+    font-size: 0.6em;
+    transform: rotate(-90deg);
+    margin-left: -40px;
+}
+
+.sideways-vmvvcbm {
+    font-size: 0.6em;
+    transform: rotate(-90deg);
+    margin-left: -55px;
+}
+
+.chair {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 15px;
+}
+
+.conf button {
+    margin: 5px 5px 5px 0;
+    padding: 3px;
+    border: none;
+    text-decoration: none;
+    display: block;
+    background-color: #cccccc;
+}
+
+.conf .paper_title {
+    display: inline-block;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.conf-small {
+    font-size: 0.6em;
+    display: block;
+    margin-top: 2px;
+    margin-left: 0;
+    margin-bottom: 5px;
+}
+
+.fab-prog {
+	font-size: 1.5em;
+	margin-left: 5px;
+}
+.paper_time {
+    margin-top: 0;
+	  margin-bottom: 5px;
+    font-size: 0.8em;
+    font-style: italic;
+}
+
+.author {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 0.9em;
+}
+
+#legend {
+    font-size: 0.8em;
+    padding: 5px;
+    background-color: #eeeeee;
+    margin: 10px;
+    max-width: 50%;
+    min-height: 100px;
+    overflow: hidden;
+}
+
+@media screen and (max-width: 768px){
+    #legend {
+        max-width: 100% !important;
+    }
+}
+
+#legend ul {
+    list-style-type: none;
+}
+
+#legend ul li {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#legend i {
+    width: 15px;
+}
+
+
+.fa-discord {
+    color: #7289da !important;
+}
+
+.fa-youtube {
+    color: #ff0000 !important;
+}

@@ -1,0 +1,7 @@
+google-api-python-client
+google-auth-httplib2
+google-auth-oauthlib
+jinja2~=2.11.2
+gspread~=3.6.0
+pandas~=1.1.2
+pdfkit

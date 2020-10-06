@@ -1,0 +1,78 @@
+{% for day in conference_days %}
+    <h3 class="day">{{ day }}</h3>
+    {% set items_per_day = df.loc[df['day'] == day] %}
+    {% set tracks_per_day = items_per_day['track_id'].unique().tolist() %}
+    {% for track in tracks_per_day %}
+        {% set trackrow = df.loc[df['track_id'] == track].head(1) %}
+        {# extract the meta-information per track before handling the individual track items #}
+        {% for key, val in trackrow.iterrows() %}
+            <div class="conf {{ val['conference'] }}">
+            <span class="conf-small">{{ val['conference'] }}</span>
+            {% if val['day'] == day and val['track_id'] == track %}
+                {% if val['track_link'] %}
+                    <a href="{{ val['track_link'] }}">
+                {% endif %}
+                <h4 class="single" id="{{ val['track_id'] }}"><span class="tracktimes">{{ val['track_start'] }}–{{ val['track_end'] }}</span>&nbsp;{{ val['track_name'] }}</h4>
+                {% if val['track_link'] %}
+                    </a>
+                {% endif %}
+                {% if val['discord'] %}
+                    <a href="{{ val['discord'] }}" target="_blank"><i class="fab fab-prog fa-discord"></i></a>
+                {% endif %}
+                {% if val['youtube'] %}
+                    <a href="{{ val['youtube'] }}" target="_blank"><i class="fab fab-prog fa-youtube"></i></a>
+                {% endif %}
+                {% if val['track_chair'] %}
+                    <p class="chair">Chair: {{ val['track_chair'] }}</p>
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+        {# Now we fetch the information for all items belonging to this track. #}
+        {% for key, val in df.dropna().iterrows() if val['day'] == day and val['track_id'] == track %}
+            {% if val['paper_title'] %}
+                <div class="entry">
+                    <div class="time">
+                    {% if val['paper_start'] %}
+                        <p class="paper_time">{{ val['paper_start'] }}-{{ val['paper_end'] }}</p>
+                    {% endif %}
+                    {% if val['oral_spotlight_poster'] %}
+                        <i class="{{ icons[val['oral_spotlight_poster']] }}"></i>
+                    {% endif %}
+                    </div>
+                    <div class="attributes">
+                        {% if val['author_name'] %}
+                            <p class="author">{{ val['author_name'] }}</p>
+                        {% endif %}
+                        {% if val['paper_title'] %}
+                            {% if val['abstract'] %}
+                                <a href="javascript:toggleAbstract('abstract_{{ val['paper_id'] }}')"><p class="paper_title">{{ val['paper_title'] }}&nbsp;<i class="fas fa-caret-down"></i></p></a>
+                            {% else %}
+                                 <p class="paper_title">{{ val['paper_title'] }}</p>
+                            {% endif %}
+                        {% endif %}
+                        {% if val['paper'] %}
+                            <a href="{{ val['paper'] }}" target="_blank"><i class="fas fa-file-alt"></i></a>
+                        {% endif %}
+                    </div>
+                    {% if val['abstract'] %}
+                        <div class="abstract" style="clear: both;">
+                            <div style="display: none" class="abstract_text" id="abstract_{{ val['paper_id'] }}">{{ val['abstract'] }}</div>
+                        </div>
+                    {% endif %}
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+    {% endfor %}
+{% endfor %}
+
+<script type="application/javascript">
+    function toggleAbstract(abstractdiv) {
+        let abstract = document.getElementById(abstractdiv);
+        if (abstract.style.display === "none") {
+            abstract.style.display = "block";
+        } else {
+            abstract.style.display = "none";
+        }
+    }
+</script>
