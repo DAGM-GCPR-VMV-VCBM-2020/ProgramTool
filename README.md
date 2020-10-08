@@ -18,6 +18,7 @@ This tool was used (and intended for) DAGM GCPR | VMV | VCBM 2020. However, it c
 - The layout is set up so each conference consists of multiple "tracks" per day, these tracks themselves consist of individual events (i.e. orals, poster sessions etc.)
 - The conferences can (and probably will) happen in parallel, this is accounted for. However, a single conference should not have multiple tracks running in parallel. (It could still work, but this scenario is untested.)
 - The tool can also handle joint events, by having a separate sheet calles "JOINT" for events that are shared between the individual conferences.
+- For more information on the overall conference organization have a look into the [guideline document](https://github.com/DAGM-GCPR-VMV-VCBM-2020/ProgramTool/blob/main/conference-media-guide_generic_v01.pdf).
 
 ### Setting the conference names
 - Open `reader.py` to change the conference names. Changing the conference names should be pretty self-explanatory:
